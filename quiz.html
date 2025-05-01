@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz das Casas - Portal Bruxo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="img/logo.png" alt="Logo Hogwarts">
+                <span>A quarta Vassoura</span>
+            </div>
+            <div class="navbar-buttons">
+                <a href="home.html" class="btn">Voltar para Home</a>
+                <button id="logout-btn" class="btn btn-secondary">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="quiz-main">
+        <h1>O Chapéu Seletor Espera...</h1>
+        <div id="quiz-container">
+            <div id="question-container" class="question">
+                <h2 id="question-text">Qual animal de estimação você levaria para Hogwarts?</h2>
+                <form class="question">
+                    <input type="radio" id="coruja" name="animal" value="Coruja">
+                    <label for="coruja">Coruja</label><br>
+                    <input type="radio" id="sapo" name="animal" value="Sapo">
+                    <label for="sapo">Sapo</label><br>
+                    <input type="radio" id="gato" name="animal" value="Gato">
+                    <label for="gato">Gato</label>
+                </form>
+            </div>
+            <div id="question-container" class="question">
+                <h2 id="question-text">Qual animal de estimação você levaria para Hogwarts?</h2>
+                <form class="question">
+                    <input type="radio" id="coruja" name="animal" value="Coruja">
+                    <label for="coruja">Coruja</label><br>
+                    <input type="radio" id="sapo" name="animal" value="Sapo">
+                    <label for="sapo">Sapo</label><br>
+                    <input type="radio" id="gato" name="animal" value="Gato">
+                    <label for="gato">Gato</label>
+                </form>
+            </div>
+            <button id="next-btn" class="btn hidden">Próxima</button>
+        </div>
+
+    </main>
+</body>
+<script src="js/script.js"></script>
+<script src="js/quiz.js"></script>
+
+</html>
