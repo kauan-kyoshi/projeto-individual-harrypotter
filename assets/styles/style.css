@@ -44,14 +44,6 @@ body {
     width: auto;
 }
 
-.div1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    height: 100vh;
-    margin-left: -10px;
-}
 
 .btn_login {
     border: none;
@@ -85,16 +77,38 @@ body {
     transform: scale(0.97);
 }
 
-.div2 {
+
+.div1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px;
-    height: 100vh;
-    background-color: rgba(235, 193, 116, 0.89);
-    border:ridge 5px ;
+    height: 2vh;
+    margin-left: -10px;
+}
+
+.div2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15%;
+    height: 30vh;
+    background-color: rgba(202, 181, 156, 0.897);
+    border:solid 4px ;
     border-color: black;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    margin-bottom: 5%;
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.3);
+    padding: 10%;
+
 }
+.div2 h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: black;
+}
+.div2 p{
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: black;
+}
+
