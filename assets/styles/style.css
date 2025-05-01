@@ -82,8 +82,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2vh;
     margin-left: -10px;
+    height: 2vh;
 }
 
 .div2 {
@@ -94,21 +94,203 @@ body {
     margin: 15%;
     height: 30vh;
     background-color: rgba(202, 181, 156, 0.897);
-    border:solid 4px ;
+    border: solid 4px;
     border-color: black;
     border-radius: 10px;
     box-shadow: 0 12px 15px rgba(0, 0, 0, 0.3);
     padding: 10%;
 
 }
+
 .div2 h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: black;
 }
-.div2 p{
+
+.div2 p {
     font-size: 1.2em;
     margin-bottom: 20px;
     color: black;
 }
 
+
+.div-carousel {
+    padding: 2% 5%;
+    /* Adjust padding specifically for the carousel div if needed */
+    height: auto;
+    /* Allow height to adjust based on content */
+    margin-bottom: 5%;
+    /* Add some space below the carousel */
+}
+
+.div-carousel h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: black;
+    text-align: center;
+    width: 100%;
+}
+
+.carousel-container {
+    position: relative;
+    /* Needed for absolute positioning of buttons */
+    width: 100%;
+    max-width: 900px;
+    /* Max width of the carousel visible area */
+    margin: 0 auto;
+    /* Center the container */
+    overflow: hidden;
+    /* Hide parts of the slide that are outside the container */
+    border-radius: 8px;
+    /* Optional: rounded corners for the container */
+}
+
+.carousel-slide-wrapper {
+    /* This wrapper helps if you add padding/borders to items */
+    width: 100%;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* Animation for sliding */
+    /* Width will be set dynamically by JS if needed, or implicitly by flex items */
+}
+
+.carousel-item {
+    min-width: 200px;
+    /* Minimum width of each book item */
+    flex: 0 0 auto;
+    /* Prevent items from shrinking/growing */
+    padding: 0 10px;
+    /* Space between items */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-width: 180px;
+    /* Control max image width within the item */
+    height: auto;
+    aspect-ratio: 2 / 3;
+    /* Maintain a typical book cover aspect ratio */
+    object-fit: cover;
+    /* Ensure image covers the area well */
+    border: 1px solid #555;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item p {
+    font-size: 0.9em;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    /* Larger arrow */
+    padding: 5px 10px;
+    /* Adjust padding */
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    /* Make buttons circular */
+    width: 40px;
+    /* Fixed width */
+    height: 40px;
+    /* Fixed height */
+    line-height: 30px;
+    /* Center the arrow vertically */
+    text-align: center;
+    opacity: 0.7;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+}
+
+.carousel-button.prev {
+    left: 10px;
+    /* Position left button */
+}
+
+.carousel-button.next {
+    right: 10px;
+    /* Position right button */
+}
+
+.carousel-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Responsive Adjustments (Example) */
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 150px;
+        /* Smaller items on smaller screens */
+    }
+
+    .carousel-item img {
+        max-width: 130px;
+    }
+
+    .carousel-button {
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+        line-height: 25px;
+    }
+
+    .div-carousel h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        min-width: 120px;
+        /* Even smaller items */
+    }
+
+    .carousel-item img {
+        max-width: 100px;
+    }
+
+    .div-carousel {
+        padding: 2% 2%;
+        /* Less horizontal padding */
+    }
+
+    .carousel-button {
+        top: auto;
+        /* Position buttons below image on very small screens */
+        bottom: 40%;
+        transform: translateY(50%);
+        font-size: 1.2rem;
+        width: 30px;
+        height: 30px;
+        line-height: 20px;
+    }
+
+    .carousel-button.prev {
+        left: 5px;
+    }
+
+    .carousel-button.next {
+        right: 5px;
+    }
+}
