@@ -4,73 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <title>Bem-vindo ao Mundo Bruxo!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Adicione aqui um link para uma fonte temática, se desejar -->
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="img/logo.png" alt="Logo Hogwarts">
+                <span>Portal Bruxo</span>
+            </div>
+            <div class="navbar-buttons">
+                <a href="login.html" class="btn">Login</a>
+                <a href="cadastro.html" class="btn btn-secondary">Cadastro</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="menu">
-        <img class="logo" src="assets/images/logo.png" alt="logo">
-        <img class="harryCentro" src="assets/images/logo-harry-potter-1024.png" alt="">
-        <button class="btn_login"><a href="login.html">Login</a></button>
-    </div>
-
-    <div class="div1">
-    </div>
-    <div class="div2">
-        <h1>Harry Potter</h1>
-        <p>Harry Potter é um garoto órfão que teve os pais assassinados quando tinha um ano por Lorde Voldemort, o bruxo das trevas mais poderoso de seu tempo que tentou matar Harry na mesma noite, porém quem acabou quase morto foi o próprio assassino. Já Harry escapara ileso, apenas com uma cicatriz em forma de raio na testa. Assim, ele passa a viver na casa dos seus tios que o detestam. No momento exato em que completa 11 anos, Potter descobre que é um bruxo e que fora convocado para uma escola de magia.</p>
-        <p>A série aborda temas como amizade, coragem, amor e a luta entre o bem e o mal. Os livros foram adaptados para uma bem-sucedida franquia de filmes, jogos e produtos relacionados, tornando-se um fenômeno cultural global.</p>
-    </div>
-
-    <div class="div2 div-carousel"> <!-- Added a specific class for easier styling -->
-        <h2>Os Livros</h2>
-        <div class="carousel-container">
-            <button class="carousel-button prev" aria-label="Livro Anterior">❮</button>
-            <div class="carousel-slide-wrapper">
-                <div class="carousel-slide">
-                    <!-- Book Items -->
-                    <div class="carousel-item">
-                        <img src="assets/images/book1_pedra_filosofal.jpg" alt="Harry Potter e a Pedra Filosofal">
-                        <p>A Pedra Filosofal</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/book2_camara_secreta.jpg" alt="Harry Potter e a Câmara Secreta">
-                        <p>A Câmara Secreta</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/book3_prisioneiro_azkaban.jpg" alt="Harry Potter e o Prisioneiro de Azkaban">
-                        <p>O Prisioneiro de Azkaban</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/book4_calice_fogo.jpg" alt="Harry Potter e o Cálice de Fogo">
-                        <p>O Cálice de Fogo</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/book5_ordem_fenix.jpg" alt="Harry Potter e a Ordem da Fênix">
-                        <p>A Ordem da Fênix</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/book6_enigma_principe.jpg" alt="Harry Potter e o Enigma do Príncipe">
-                        <p>O Enigma do Príncipe</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/book7_reliquias_morte.jpg" alt="Harry Potter e as Relíquias da Morte">
-                        <p>As Relíquias da Morte</p>
-                    </div>
-                    <!-- End Book Items -->
+    <main class="landing-main">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Seu Portal Pessoal para o Mundo Mágico</h1>
+                <p>Descubra sua casa em Hogwarts, conecte-se com a magia e explore um universo de
+                    possibilidades bruxas. Crie sua conta ou faça login para começar sua jornada!</p>
+                <div class="hero-buttons">
+                    <a href="cadastro.html" class="btn btn-large">Criar Conta Mágica</a>
+                    <a href="login.html" class="btn btn-large btn-secondary">Já sou Bruxo(a)! (Login)</a>
                 </div>
             </div>
-            <button class="carousel-button next" aria-label="Próximo Livro">❯</button>
-        </div>
-    </div>
+            <div class="hero-image">
+                <img src="img/hogwarts.jpg" alt="Ilustração do Castelo de Hogwarts">
+                <!-- Use uma imagem atraente aqui -->
+            </div>
+        </section>
 
-    <div class="div1">
-    </div>
+        <section class="features-section" id="features">
+            <h2>O Que Espera Por Você?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="img/sorting-hat-icon.png" alt="Ícone Chapéu Seletor" class="feature-icon">
+                    <h3>Descubra Sua Casa</h3>
+                    <p>Responda ao nosso quiz exclusivo, inspirado no Chapéu Seletor, e descubra se seu coração pertence
+                        à Grifinória, Lufa-Lufa, Corvinal ou Sonserina!</p>
+                </div>
+                <div class="feature-card">
+                    <img src="img/stats-icon-color.png" alt="Ícone de Gráfico" class="feature-icon">
+                    <h3>Estatísticas Bruxas</h3>
+                    <p>Curioso para saber como os alunos estão distribuídos pelas casas? Explore nosso dashboard
+                        interativo com dados fascinantes sobre nossa comunidade.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="img/community-icon.png" alt="Ícone Comunidade" class="feature-icon">
+                    <h3>Comunidade Mágica</h3>
+                    <p>Ao se cadastrar, você guarda seu resultado do quiz, exibe o brasão da sua casa e se torna parte
+                        de nossa crescente comunidade de fãs (mais interações em breve!).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-join-section">
+            <h2>Por Que se Juntar ao Portal?</h2>
+            <div class="why-join-content">
+                <img src="img/hogwarts-letter.png" alt="Carta de Hogwarts" class="why-join-image">
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Salve permanentemente a sua casa de Hogwarts.</li>
+                    <li><i class="fas fa-chart-pie"></i> Contribua anonimamente para as estatísticas gerais do site.
+                    </li>
+                    <li><i class="fas fa-user-friends"></i> Exiba com orgulho o brasão da sua casa em seu perfil
+                        (futuro!).</li>
+                    <li><i class="fas fa-star"></i> Tenha acesso a conteúdos e funcionalidades exclusivas para membros
+                        no futuro.</li>
+                    <li><i class="fas fa-magic"></i> Mergulhe ainda mais fundo no universo mágico que você ama!</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Pronto para Lançar seu Primeiro Feitiço?</h2>
+            <p>Não seja um trouxa! Crie sua conta agora e deixe a magia começar.</p>
+            <a href="cadastro.html" class="btn btn-large">Quero me Cadastrar!</a>
+        </section>
+
+    </main>
+
+    <footer>
+    </footer>
+
+
 
 </body>
-<script src="assets/scripts/script.js"></script>
-
+<script src="js/script.js"></script>
 
 </html>
