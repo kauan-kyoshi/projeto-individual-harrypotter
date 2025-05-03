@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Portal Bruxo</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+
+<body class="form-page">
+    <div class="form-container">
+        <h2>Crie sua Conta Bruxa:</h2>
+
+        <div id="cadastro-form">
+
+            <div class="form-group">
+                <span>Nome de Usuário:</span>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-group">
+                <span>Email:</span>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <span>Senha:</span>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <span>Confirmação de Senha:</span>
+                <input type="password" id="password_confirm" name="password_confirm">
+            </div>
+            <button class="btn" onclick="cadastrar()">Registrar</button>
+        </div>
+
+        <p class="switch-form">Já tem uma conta? <a href="login.html">Faça Login</a></p>
+    </div>
+
+</body>
+<script>
+    let listaUsuariosCadastrados = [];
+
+    function cadastrar() {
+        var inputUsername = username.value;
+        var inputEmail = email.value;
+        var inputPassword = password.value;
+        var inputPasswordConfirm = password_confirm.value;
+
+
+        if (inputUsername == '' || inputEmail == '' || inputPassword == '' || inputPasswordConfirm == '') {
+            alert("Todos os campos devem ser preenchidos!");
+            return;
+        }
+        if (inputPassword != inputPasswordConfirm) {
+            alert("As senhas não coincidem!");
+            return;
+        }
+        if (inputPassword.length < 6) {
+            alert("A senha deve ter pelo menos 6 caracteres!");
+            return;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nomeServer: inputUsername,
+                emailServer: inputEmail,
+                senhaServer: inputPassword
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    alert("Usuário cadastrado com sucesso!");
+                    window.location.href = "login.html";
+                } else {
+                    alert("Erro ao cadastrar usuário.");
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+        
+    }
+
+
+</script>
+
+</html>
