@@ -12,22 +12,77 @@
 <body class="form-page">
     <div class="form-container">
         <h2>Entrando no Mundo Bruxo:</h2>
-        <form id="login-form">
-            <div class="form-group">
-                <label for="username-login">Nome de Usuário:</label>
-                <input type="text" id="username-login" name="username-login" required>
-            </div>
-            <div class="form-group">
-                <label for="password-login">Senha:</label>
-                <input type="password" id="password-login" name="password-login" required>
-            </div>
-            <button type="submit" class="btn">Entrar</button>
-            <p id="error-message" class="error"></p>
-        </form>
+        <div class="form-group">
+            <label for="username-login">Nome de Usuário:</label>
+            <input type="text" id="usernameLogin" name="username-login" required>
+        </div>
+        <div class="form-group">
+            <label for="password-login">Senha:</label>
+            <input type="password" id="passwordLogin" name="password-login" required>
+        </div>
+        <button onclick="entrar()" class="btn">Entrar</button>
+        <p id="error-message" class="error"></p>
         <p class="switch-form">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+        <br>
+        <a href="cadastro.html">Voltar</a>
     </div>
 
-    <script src="js/script.js"></script>
+    
 </body>
+<script>
+    function entrar() {
+
+
+        var inputUsername = usernameLogin.value;
+        var inputSenha = passwordLogin.value;
+
+        if (inputUsername == "" || inputSenha == "") {
+            alert("Preencha todos os campos.");
+            
+            return
+        }
+
+        
+
+
+        console.log("FORM LOGIN: ", inputUsername);
+        console.log("FORM SENHA: ", inputSenha);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: inputUsername,
+                senhaServer: inputSenha
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                window.location = "home.html";
+                resposta.json().then(json => {
+
+                    setTimeout(function () {
+                    }, 1000); // apenas para exibir o loading
+                });
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+                alert("Houve um erro ao tentar realizar o login!");
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</script>
+
 
 </html>
