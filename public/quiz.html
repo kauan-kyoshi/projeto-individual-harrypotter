@@ -7,9 +7,17 @@
     <title>Quiz das Casas - Portal Bruxo</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-attachment: fixed;
+            background-image: url('img/chapeu.jpg');
+        }
+    </style>
 </head>
 
 <body>
+
     <header>
         <nav class="navbar">
             <div class="navbar-logo">
@@ -24,36 +32,208 @@
     </header>
 
     <main class="quiz-main">
-        <h1>O Chapéu Seletor Espera...</h1>
+        <h1>O Chapéu Seletor Está Pensando...</h1>
         <div id="quiz-container">
-            <div id="question-container" class="question">
+            <div id="question-container" class="out-question">
                 <h2 id="question-text">Qual animal de estimação você levaria para Hogwarts?</h2>
-                <form class="question">
-                    <input type="radio" id="coruja" name="animal" value="Coruja">
-                    <label for="coruja">Coruja</label><br>
-                    <input type="radio" id="sapo" name="animal" value="Sapo">
-                    <label for="sapo">Sapo</label><br>
-                    <input type="radio" id="gato" name="animal" value="Gato">
-                    <label for="gato">Gato</label>
-                </form>
+                <div class="question">
+                    <span>
+                        <input type="radio" id="coruja" name="animal" value="Coruja">
+                        <label for="coruja">Coruja</label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="sapo" name="animal" value="Sapo">
+                        <label for="sapo">Sapo</label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="gato" name="animal" value="Gato">
+                        <label for="gato">Gato</label>
+                    </span>
+                </div>
             </div>
-            <div id="question-container" class="question">
-                <h2 id="question-text">Qual animal de estimação você levaria para Hogwarts?</h2>
-                <form class="question">
-                    <input type="radio" id="coruja" name="animal" value="Coruja">
-                    <label for="coruja">Coruja</label><br>
-                    <input type="radio" id="sapo" name="animal" value="Sapo">
-                    <label for="sapo">Sapo</label><br>
-                    <input type="radio" id="gato" name="animal" value="Gato">
-                    <label for="gato">Gato</label>
-                </form>
+
+            <div id="question-container" class="out-question">
+                <h2 id="question-text"> Qual das opções abaixo você mais odiaria que te chamassem? </h2>
+                <div class="question">
+                    <span>
+                        <input type="radio" id="Ignorante" name="odiaria" value="Ignorante">
+                        <label for="Ignorante">Ignorante</label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="Egoista" name="odiaria" value="Egoista">
+                        <label for="Egoista">Egoísta</label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="ordinario" name="odiaria" value="Ordinario">
+                        <label for="ordinario">Ordinário</label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="covarde" name="odiaria" value="Covarde">
+                        <label for="covarde">Covarde</label>
+                    </span>
+                </div>
             </div>
-            <button id="next-btn" class="btn hidden">Próxima</button>
+
+            <div id="question-container" class="out-question">
+                <h2 id="question-text">  Você e dois amigos precisam atravessar uma ponte guardada por um troll do rio que insiste em lutar contra um de vocês antes de deixar todos passarem. Você:  </h2>
+                <div class="question">
+                    <span>
+                        <input type="radio" id="voluntario" name="troll" value="voluntario">
+                        <label for="voluntario">Se voluntaria para lutar </label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="confundir" name="troll" value="confundir">
+                        <label for="confundir">Tentar confundir o troll e fazê-lo deixar vocês três passarem sem lutar? </label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="sugerir" name="troll" value="sugerir">
+                        <label for="sugerir">Sugere que vocês três lutem (sem contar ao troll)? </label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="sorteio" name="troll" value="sorteio">
+                        <label for="sorteio">Sugira um sorteio para decidir quem de vocês lutará? </label>
+                    </span>
+                </div>
+            </div>
+            
+            <div id="question-container" class="out-question">
+                <h2 id="question-text">  O que você mais espera aprender em Hogwarts?  </h2>
+                <div class="question">
+                    <span>
+                        <input type="radio" id="criaturas" name="aprender" value="criaturas">
+                        <label for="criaturas">Tudo sobre criaturas mágicas </label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="voar" name="aprender" value="voar">
+                        <label for="voar">Voar em uma vassoura </label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="aparatar" name="aprender" value="aparatar">
+                        <label for="aparatar">Aparatar e Desaparatar</label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="transfiguração" name="aprender" value="transfiguração">
+                        <label for="transfiguração">Transfiguração</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="feitiços" name="aprender" value="feitiços">
+                        <label for="feitiços">Feitiços e azarações </label>
+                    </span>
+                    <span>
+                        <input type="radio" id="tudo" name="aprender" value="tudo">
+                        <label for="tudo">Todas as áreas da magia que eu puder</label>
+                    </span>
+                </div>
+            </div>
+
+            <div id="question-container" class="out-question">
+                <h2 id="question-text"> Uma vez a cada século, o arbusto Flutterby produz flores que adaptam seu aroma para atrair os incautos. Se ele te atraísse, teria o seguinte cheiro: </h2>
+                <div class="question">
+                    <span>
+                        <input type="radio" id="mar" name="flores" value="mar">
+                        <label for="mar">O Mar</label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="lar" name="flores" value="lar">
+                        <label for="lar">Lar</label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="lareira" name="flores" value="lareira">
+                        <label for="lareira">Uma lareira crepitante </label><br>
+                    </span>
+                    <span>
+                        <input type="radio" id="pergaminho" name="flores" value="pergaminho">
+                        <label for="pergaminho">Pergaminho fresco</label>
+                    </span>
+                </div>
+            </div>
+
+
+            <button class="btn" onclick="enviar()">Enviar</button>
+            
         </div>
 
     </main>
 </body>
-<script src="js/script.js"></script>
+
+<script>
+    var respostas = []
+    
+    function enviar (){
+        var var_animal = ''
+        var var_odio = ''
+        var var_troll = ''
+        var var_aprender = ''
+        var var_flores = ''
+
+        const animalSelecionado = document.querySelector('input[name="animal"]:checked');
+        const odioSelecionado = document.querySelector('input[name="odiaria"]:checked');
+        const trollSelecionado = document.querySelector('input[name="troll"]:checked');
+        const aprenderSelecionado = document.querySelector('input[name="aprender"]:checked');
+        const floresSelecionado = document.querySelector('input[name="flores"]:checked');
+
+        if (animalSelecionado) {
+            var_animal = animalSelecionado.value;
+        } else {
+            alert("Por favor, escolha um animal de estimação.");
+            return;
+        }
+
+        if (odioSelecionado) {
+            var_odio = odioSelecionado.value;
+        } else {
+            alert("Por favor, responda o que você mais odiaria que te chamassem.");
+            return;
+        }
+
+        if (trollSelecionado){
+            var_troll = trollSelecionado.value
+        } else {
+            alert("Por favor, responda sobre a situação com o troll.");
+            return;
+        }
+
+        if (aprenderSelecionado){
+            var_aprender = aprenderSelecionado.value
+        } else {
+            alert("Por favor, responda o que você mais espera aprender.")
+            return;
+        }
+        
+        if (floresSelecionado){
+            var_flores = floresSelecionado.value
+        } else {
+            alert("Por favor, responda sobre o cheiro da flor.");
+            return
+        }
+
+
+
+        respostas.push(var_animal,var_odio,var_troll,var_aprender,var_flores);
+    }
+
+    function escolha(){
+        var grifinoria = 0;
+        var sonserina = 0;
+        var corvinal = 0;
+        var lufalufa = 0;
+    
+        if(respostas[0] == 'Coruja'){
+            grifinoria += 3
+            corvinal +=2
+            lufalufa ++
+        }else if(respostas[0] == 'Gato'){
+            sonserina +=3
+            grifinoria +=2
+            corvinal++
+        }else{
+            
+
+        }
+    
+    }
+
+</script>
 
 
 </html>
