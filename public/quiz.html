@@ -151,88 +151,13 @@
 
             <button class="btn" onclick="enviar()">Enviar</button>
             
+            <div class="hidenResult"><img src="img/grifinoria.png" alt=""></div>
         </div>
 
     </main>
 </body>
 
-<script>
-    var respostas = []
-    
-    function enviar (){
-        var var_animal = ''
-        var var_odio = ''
-        var var_troll = ''
-        var var_aprender = ''
-        var var_flores = ''
-
-        const animalSelecionado = document.querySelector('input[name="animal"]:checked');
-        const odioSelecionado = document.querySelector('input[name="odiaria"]:checked');
-        const trollSelecionado = document.querySelector('input[name="troll"]:checked');
-        const aprenderSelecionado = document.querySelector('input[name="aprender"]:checked');
-        const floresSelecionado = document.querySelector('input[name="flores"]:checked');
-
-        if (animalSelecionado) {
-            var_animal = animalSelecionado.value;
-        } else {
-            alert("Por favor, escolha um animal de estimação.");
-            return;
-        }
-
-        if (odioSelecionado) {
-            var_odio = odioSelecionado.value;
-        } else {
-            alert("Por favor, responda o que você mais odiaria que te chamassem.");
-            return;
-        }
-
-        if (trollSelecionado){
-            var_troll = trollSelecionado.value
-        } else {
-            alert("Por favor, responda sobre a situação com o troll.");
-            return;
-        }
-
-        if (aprenderSelecionado){
-            var_aprender = aprenderSelecionado.value
-        } else {
-            alert("Por favor, responda o que você mais espera aprender.")
-            return;
-        }
-        
-        if (floresSelecionado){
-            var_flores = floresSelecionado.value
-        } else {
-            alert("Por favor, responda sobre o cheiro da flor.");
-            return
-        }
-
-
-
-        respostas.push(var_animal,var_odio,var_troll,var_aprender,var_flores);
-    }
-
-    function escolha(){
-        var grifinoria = 0;
-        var sonserina = 0;
-        var corvinal = 0;
-        var lufalufa = 0;
-    
-        if(respostas[0] == 'Coruja'){
-            grifinoria += 3
-            corvinal +=2
-            lufalufa ++
-        }else if(respostas[0] == 'Gato'){
-            sonserina +=3
-            grifinoria +=2
-            corvinal++
-        }else{
-            
-
-        }
-    
-    }
-
+<script src="js/quiz.js">
 </script>
 
 
