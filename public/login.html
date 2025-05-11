@@ -42,6 +42,7 @@
             return
         }
 
+        var idUsuario = 0;
         
 
 
@@ -64,7 +65,8 @@
                 console.log(resposta);
                 window.location = "home.html";
                 resposta.json().then(json => {
-
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.NOME_USUARIO = json.nome;
                     setTimeout(function () {
                     }, 1000); // apenas para exibir o loading
                 });

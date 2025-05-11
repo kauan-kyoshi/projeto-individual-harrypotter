@@ -21,7 +21,6 @@ function autenticar(req, res) {
                     id: resultadoAutenticar[0].id,
                     email: resultadoAutenticar[0].email,
                     nome: resultadoAutenticar[0].nome
-                    // senha normalmente não é retornada por segurança
                 });
             } else if (resultadoAutenticar.length == 0) {
                 res.status(403).send("Email e/ou senha inválido(s)");

@@ -13,10 +13,18 @@ USE aQuartaVassoura;
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+	nome VARCHAR(50) not null,
+	email VARCHAR(50) not null,
+	senha VARCHAR(50) not null
 );
 
-INSERT INTO usuario (nome, email, senha) VALUES ('John Doe', 'john.doe@example.com', 'password123');
-INSERT INTO usuario (nome, email, senha) VALUES ('Jane Smith', 'jane.smith@example.com', 'password456');
+CREATE TABLE casa (
+    idcasa INT NOT NULL AUTO_INCREMENT,
+    fkUsuario INT,
+    nome VARCHAR(45) NOT NULL,
+    fantasma VARCHAR(45) NOT NULL,
+    local VARCHAR(45) NOT NULL,
+    PRIMARY KEY (idcasa),
+    CONSTRAINT fk_casa_usuario FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
+);
+

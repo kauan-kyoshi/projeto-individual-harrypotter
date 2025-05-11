@@ -168,20 +168,75 @@ function enviar (){
         }
 
 
+        var fantasma = '';
+        var local = '';
 
 
 
         if (casaVencedora == "Grifinória" ){
             divResultado.innerHTML = `<img src="img/grifinoria.png" alt="">`
+            fantasma = 'Nick Quase Sem Cabeça'
+            local = ' Torre da Grifinória, no sétimo andar '
+
         }else if(casaVencedora == "Sonserina"){
             divResultado.innerHTML = `<img src="img/sonserina.png" alt="">`
+            fantasma = 'Barão Sangrento'
+            local = 'Masmorras'
         }else if(casaVencedora == "Corvinal"){
             divResultado.innerHTML = `<img src="img/corvinal.png" alt="">`
+            fantasma = 'Dama Cinza'
+            local = 'Torre da Corvinal, no quinto andar'
         }else if(casaVencedora == "Lufa-Lufa"){
             divResultado.innerHTML = `<img src="img/lufalufa.png" alt="">`
+            fantasma = 'Frei Gordo'
+            local = 'Próximo à Cozinha'
         }else {
             alert('ocorreu um erro')
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        var fkUsuario = sessionStorage.getItem("ID_USUARIO");
+
+
+
+        fetch("/quiz/enviar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                casaServer: casaVencedora,
+                fkServer: fkUsuario,
+                fantasmaServer: fantasma,
+                localServer: local
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    alert("Usuário cadastrado com sucesso!");
+                    
+                } else {
+                    alert("Erro ao cadastrar usuário.");
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+        
+
+
 
         divResultado.style.display = 'block'
     }

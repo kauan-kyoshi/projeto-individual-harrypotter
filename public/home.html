@@ -23,7 +23,9 @@
     </header>
 
     <main class="home-main">
-        <h1>Bem-vindo de volta,</h1>
+        <span id="ola">
+
+        </span>
         <p>O que você deseja fazer?</p>
 
         <div class="home-actions">
@@ -38,6 +40,19 @@
 
 
 </body>
-<script src="js/script.js"></script>
+<script>
+    function exibirSaudacao() {
+    var nome = sessionStorage.getItem("NOME_USUARIO");
+    var elementoOla = document.getElementById("ola");
+
+    if (elementoOla && nome) {
+        elementoOla.innerHTML = "<h1>Bem-vindo de volta, " + nome + "</h1>";
+    } else if (elementoOla) {
+        elementoOla.innerHTML = "<h1>Bem-vindo, bruxo(a)!</h1>"; 
+    }
+}
+
+window.onload = exibirSaudacao;
+</script>
 
 </html>
