@@ -17,7 +17,8 @@
                 <span>A quarta Vassoura</span>
             </div>
             <div class="navbar-buttons">
-                <button id="logout-btn" class="btn btn-secondary" onclick="window.location.href = 'index.html'">Malfeito, feito</button>
+                <button id="logout-btn" class="btn btn-secondary"
+                    onclick="window.location.href = 'index.html'">Malfeito, feito</button>
             </div>
         </nav>
     </header>
@@ -29,9 +30,7 @@
         <p>O que você deseja fazer?</p>
 
         <div class="home-actions">
-            <a href="quiz.html" class="btn btn-large">    
-                Descubra sua Casa!
-            </a>
+            <button onclick="quiz()" class="btn btn-large">Descubra sua Casa!</button>
             <a href="dashboard.html" class="btn btn-large btn-secondary">
                 Ver Estatísticas
             </a>
@@ -42,17 +41,23 @@
 </body>
 <script>
     function exibirSaudacao() {
-    var nome = sessionStorage.getItem("NOME_USUARIO");
-    var elementoOla = document.getElementById("ola");
+        var nome = sessionStorage.getItem("NOME_USUARIO");
+        var elementoOla = document.getElementById("ola");
 
-    if (elementoOla && nome) {
-        elementoOla.innerHTML = "<h1>Bem-vindo de volta, " + nome + "</h1>";
-    } else if (elementoOla) {
-        elementoOla.innerHTML = "<h1>Bem-vindo, bruxo(a)!</h1>"; 
+        if (elementoOla && nome) {
+            elementoOla.innerHTML = "<h1>Bem-vindo de volta, " + nome + "</h1>";
+        } else if (elementoOla) {
+            elementoOla.innerHTML = "<h1>Bem-vindo, bruxo(a)!</h1>";
+        }
     }
-}
 
-window.onload = exibirSaudacao;
+    function quiz() {
+
+    window.location.href = "quiz.html";
+    
+    }
+
+    window.onload = exibirSaudacao;
 </script>
 
 </html>

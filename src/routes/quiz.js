@@ -9,4 +9,18 @@ router.post("/enviar", function (req, res) {
 
 });
 
+
+router.get("/buscarCasa", function (req, res) {
+    
+    quizController.buscarCasa(req, res);
+    
+});
+
+
+router.put("/atualizarfk", function (req, res) {
+    quizController.atualizarfk(req, res);
+
+});
+
+
 module.exports = router;

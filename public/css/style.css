@@ -17,6 +17,7 @@ body {
     /* Textura de pergaminho sutil */
     background-size: cover;
     background-attachment: fixed;
+    
 }
 
 h1,
@@ -144,6 +145,7 @@ a:hover {
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    
     color: #fff;
     /* Branco para contraste no fundo escuro */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -241,6 +243,7 @@ a:hover {
 .home-main {
     padding: 3rem 2rem;
     text-align: center;
+    background-color: #ff4d4d;
 }
 
 .home-actions {

@@ -63,21 +63,20 @@
 
             if (resposta.ok) {
                 console.log(resposta);
-                window.location = "home.html";
                 resposta.json().then(json => {
                     sessionStorage.ID_USUARIO = json.id;
                     sessionStorage.NOME_USUARIO = json.nome;
                     setTimeout(function () {
                     }, 1000); // apenas para exibir o loading
                 });
+                window.location = "home.html";
             } else {
                 console.log("Houve um erro ao tentar realizar o login!");
-                alert("Houve um erro ao tentar realizar o login!");
+                alert("usuário ou senha inválidos!");
                 resposta.text().then(texto => {
                     console.error(texto);
                 });
             }
-
         }).catch(function (erro) {
             console.log(erro);
         })

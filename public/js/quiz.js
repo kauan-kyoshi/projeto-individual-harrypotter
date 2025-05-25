@@ -3,6 +3,12 @@ var casaVencedora = '';
 
 const divResultado = document.querySelector('.hidenResult');
 
+
+
+
+
+
+
 function enviar (){
         var var_animal = ''
         var var_odio = ''
@@ -198,14 +204,9 @@ function enviar (){
 
 
 
+        var idCasa = '';
+        var fk_casa = sessionStorage.getItem("ID_USUARIO");
 
-
-
-
-
-
-
-        var fkUsuario = sessionStorage.getItem("ID_USUARIO");
 
 
 
@@ -216,19 +217,21 @@ function enviar (){
             },
             body: JSON.stringify({
                 casaServer: casaVencedora,
-                fkServer: fkUsuario,
                 fantasmaServer: fantasma,
-                localServer: local
+                localServer: local,
+                fkcasaServer: fk_casa
             }),
         })
             .then(function (resposta) {
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    alert("Usuário cadastrado com sucesso!");
+                    divResultado.style.display = 'block';
+                    console.log("Casa cadastrada com sucesso!");
+                    
                     
                 } else {
-                    alert("Erro ao cadastrar usuário.");
+                    alert("Erro ao cadastrar a casa.");
                 }
             })
             .catch(function (erro) {
@@ -236,7 +239,65 @@ function enviar (){
             });
         
 
+        fetch("/quiz/buscarCasa", {
 
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                casa: casaVencedora,
+                fantasma: fantasma,
+                local: local,
+                idCasa: idcasa
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
 
-        divResultado.style.display = 'block'
+                if (resposta.ok) {
+                    console.log("Casa cadastrada com sucesso!");
+                    idCasa= resposta.idcasa;
+                    
+                } else {
+                    alert("Erro ao buscar o idcasa.");
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+            
+            
+            
+            
+        fetch("/quiz/atualizarfk", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                fk_casa: sessionStorage.getItem("ID_USUARIO"),
+                idCasa: idCasa
+            }),
+        })  
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    divResultado.style.display = 'block'
+                    
+                } else {
+                    alert("Erro ao atualizar fk.");
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+
+        
+
+        respostas = []
+        
     }
+        
+    
